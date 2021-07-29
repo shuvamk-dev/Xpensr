@@ -3,8 +3,20 @@ import "./header.css";
 const Header = () => {
   return (
     <div className="header">
-      <div>Xpensr</div>
-      <div>Github</div>
+      <div className="header-logo">
+        Xpensr
+        <i class="fi-rr-credit-card" />.
+      </div>
+      <div className="header-button">
+        <a
+          href="https://github.com/shuvamk"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <i class="devicon-github-original colored" />
+          Star
+        </a>
+      </div>
     </div>
   );
 };

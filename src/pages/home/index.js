@@ -1,5 +1,4 @@
 import React from "react";
-import { useSelector } from "react-redux";
 import ExpenseList from "../../components/expense-list";
 import Footer from "../../components/footer";
 import Header from "../../components/header";
