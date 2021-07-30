@@ -3,6 +3,7 @@ import "./card.css";
 import moment from "moment";
 const Card = ({ item }) => {
   const time = moment(item.createdAt).fromNow();
+
   return (
     <div
       className="card"
