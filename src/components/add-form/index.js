@@ -5,6 +5,7 @@ import "./add-form.css";
 import { toast, ToastContainer } from "react-toastify";
 import { useDispatch } from "react-redux";
 import { addExpense } from "../../redux/actions/expenses";
+import SuccessModal from "./success-modal";
 
 const AddForm = () => {
   const [categoryOpen, setCategoryOpen] = useState(false);
@@ -13,7 +14,7 @@ const AddForm = () => {
   const [amount, setAmount] = useState("");
   const [category, setCategory] = useState();
   const dispatch = useDispatch();
-
+  const [modalOpen, setModalOpen] = useState(true);
   const handleTitle = (e) => {
     setTitle(e.target.value);
   };
@@ -47,6 +48,7 @@ const AddForm = () => {
   };
   return (
     <div className="add-form">
+      <SuccessModal modalOpen={modalOpen} />
       <ToastContainer
         position="bottom-left"
         autoClose={1500}
