@@ -1,0 +1,7 @@
+.expense-list {
+  margin-right: 6px 12px;
+  border-top: 1px solid black;
+  border-radius: 6px;
+  display: flex;
+  flex: 1;
+}
