@@ -5,6 +5,7 @@ import {
 } from "../action-types/expenses";
 
 export const addExpense = (data) => {
+  console.log(data, "Action");
   return {
     type: ADD_EXPENSE,
     data,

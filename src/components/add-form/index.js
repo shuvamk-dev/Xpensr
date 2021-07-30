@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 import { categories } from "../../constants/add-expense";
+import "react-toastify/dist/ReactToastify.css";
 import "./add-form.css";
+import { toast, ToastContainer } from "react-toastify";
+import { useDispatch } from "react-redux";
+import { addExpense } from "../../redux/actions/expenses";
 
 const AddForm = () => {
   const [categoryOpen, setCategoryOpen] = useState(false);
@@ -8,6 +12,7 @@ const AddForm = () => {
   const [title, setTitle] = useState("");
   const [amount, setAmount] = useState("");
   const [category, setCategory] = useState();
+  const dispatch = useDispatch();
 
   const handleTitle = (e) => {
     setTitle(e.target.value);
@@ -25,8 +30,30 @@ const AddForm = () => {
     setCategoryOpen(false);
     console.log(category);
   };
+
+  const handleSubmit = () => {
+    if (title === "" || amount === "" || !category) {
+      const notify = () => toast("Please enter complete data");
+      notify();
+      return;
+    }
+    const data = {
+      title,
+      amount,
+      category,
+      createdAt: new Date(),
+    };
+    dispatch(addExpense(data));
+  };
   return (
     <div className="add-form">
+      <ToastContainer
+        position="bottom-left"
+        autoClose={1500}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+      />
       <div className="form-item">
         <label>Title</label>
         <input
@@ -71,7 +98,7 @@ const AddForm = () => {
         </div>
       </div>
       <div className="form-add-button">
-        <div>
+        <div onClick={handleSubmit}>
           <label>Add</label>
           <i class="fi-rr-paper-plane"></i>
         </div>
