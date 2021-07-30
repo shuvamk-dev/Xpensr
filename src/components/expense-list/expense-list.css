@@ -3,5 +3,6 @@
   border-top: 1px solid black;
   border-radius: 6px;
   display: flex;
+  flex-direction: column;
   flex: 1;
 }
