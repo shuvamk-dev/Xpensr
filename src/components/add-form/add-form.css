@@ -1,0 +1,16 @@
+.add-form {
+  background: #ffffff;
+  box-shadow: 20px 20px 60px #d9d9d9, -20px -20px 60px #ffffff;
+  margin: 6px 12px;
+  padding: 24px;
+}
+
+.category {
+  position: relative;
+}
+.category-container {
+  display: flex;
+  position: absolute;
+  background-color: lightgreen;
+  flex-direction: column;
+}
