@@ -6,12 +6,46 @@
   display: flex;
   flex-direction: column;
   flex: 1;
+  height: 60vh;
 }
-
+.form-item {
+  margin: 12px 0px;
+  width: 70%;
+  border: 1px solid black;
+  padding: 4px;
+  border-radius: 4px;
+}
+.form-item label {
+  background-color: lightgrey;
+  padding: 2px 12px;
+  border-radius: 0px 4px 4px 0px;
+}
+.form-item input {
+  font-size: 16px;
+  border: none;
+  width: 70%;
+  outline: none;
+}
+.category-container-parent {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
 .category {
   position: relative;
   width: 40%;
-  background-color: lightgreen;
+}
+.category-dropdown {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 12px 0px;
+  border: 1px solid black;
+  padding: 4px;
+}
+.category-dropdown i {
+  display: flex;
+  align-items: center;
 }
 
 .category-container {
@@ -32,4 +66,37 @@
 .category-item img {
   height: 32px;
   margin-right: 20px;
+}
+
+.form-add-button {
+  display: flex;
+  justify-content: flex-end;
+}
+.form-add-button div {
+  display: flex;
+  border: 1px solid black;
+  padding: 2px 8px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.form-add-button div i {
+  display: flex;
+  align-items: center;
+  margin-left: 6px;
+}
+
+@media only screen and (max-width: 1024px) {
+  .form-item {
+    width: 100%;
+  }
+  .form-item input {
+    width: 70%;
+  }
+  .amount-input {
+    width: 50% !important;
+  }
+  .category {
+    width: 80%;
+  }
 }
