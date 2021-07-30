@@ -1,7 +1,10 @@
 import React, { useState } from "react";
+import { categories } from "../../constants/add-expense";
 import "./add-form.css";
+
 const AddForm = () => {
   const [categoryOpen, setCategoryOpen] = useState(false);
+  const cat = categories;
   return (
     <div className="add-form">
       <div>
@@ -17,16 +20,20 @@ const AddForm = () => {
           className="category-dropdown"
           onClick={() => setCategoryOpen(!categoryOpen)}
         >
-          CLick me
+          <label>Category</label>
+          <i class="fi-rr-angle-down"></i>
         </div>
         {categoryOpen && (
           <div className="category-container">
-            <div>Apple</div>
-            <div>Apple</div>
-            <div>Apple</div>
-            <div>Apple</div>
-            <div>Apple</div>
-            <div>Apple</div>
+            {cat.map((category) => (
+              <div
+                className="category-item"
+                style={{ borderRight: `5px solid ${category.color}` }}
+              >
+                <label>{category.title}</label>
+                <img src={category.icon.default} alt={category.title} />
+              </div>
+            ))}
           </div>
         )}
       </div>

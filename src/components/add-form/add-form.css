@@ -3,14 +3,33 @@
   box-shadow: 20px 20px 60px #d9d9d9, -20px -20px 60px #ffffff;
   margin: 6px 12px;
   padding: 24px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 }
 
 .category {
   position: relative;
+  width: 40%;
+  background-color: lightgreen;
 }
+
 .category-container {
   display: flex;
   position: absolute;
-  background-color: lightgreen;
+  width: 100%;
   flex-direction: column;
+  background: #ffffff;
+  box-shadow: 20px 20px 60px #d9d9d9, -20px -20px 60px #ffffff;
+}
+
+.category-item {
+  width: 98%;
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0px;
+}
+.category-item img {
+  height: 32px;
+  margin-right: 20px;
 }
