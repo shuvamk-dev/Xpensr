@@ -62,6 +62,7 @@
   display: flex;
   justify-content: space-between;
   padding: 8px 0px;
+  cursor: pointer;
 }
 .category-item img {
   height: 32px;
