@@ -1,0 +1,60 @@
+.topfold {
+  display: flex;
+  justify-content: space-between;
+  margin: 6px 12px;
+  padding: 12px 0px;
+  align-items: center;
+}
+.searchbar {
+  display: flex;
+  align-items: center;
+  width: 50%;
+  background-color: lightgray;
+  border-radius: 12px;
+}
+.searchbar input {
+  width: 80%;
+  outline: none;
+  padding: 8px 0px;
+  border: none;
+  margin-left: 6px;
+  background-color: lightgray;
+}
+
+.searchbar i {
+  display: flex;
+  align-items: center;
+  margin-left: 6px;
+}
+
+.add-button {
+  display: flex;
+  align-items: center;
+  border-radius: 4px;
+  border: 1px solid black;
+  font-size: 20px;
+  padding: 0px 8px;
+  border: 1px solid black;
+  border-radius: 6px;
+}
+
+.add-button i {
+  display: flex;
+  align-items: center;
+  margin-right: 4px;
+}
+
+@media only screen and (max-width: 1024px) {
+  .add-button {
+    font-size: 18px;
+  }
+  .searchbar {
+    width: 70%;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .add-button {
+    font-size: 16px;
+  }
+}
