@@ -14,7 +14,7 @@ const AddForm = () => {
   const [amount, setAmount] = useState("");
   const [category, setCategory] = useState();
   const dispatch = useDispatch();
-  const [modalOpen, setModalOpen] = useState(true);
+  const [modalOpen, setModalOpen] = useState(false);
   const handleTitle = (e) => {
     setTitle(e.target.value);
   };
@@ -45,7 +45,9 @@ const AddForm = () => {
       createdAt: new Date(),
     };
     dispatch(addExpense(data));
+    setModalOpen(!modalOpen);
   };
+
   return (
     <div className="add-form">
       <SuccessModal modalOpen={modalOpen} />
