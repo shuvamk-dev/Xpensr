@@ -5,7 +5,6 @@ import {
 } from "../action-types/expenses";
 
 export const addExpense = (data) => {
-  console.log(data, "Action");
   return {
     type: ADD_EXPENSE,
     data,
@@ -20,6 +19,7 @@ export const editExpense = (data) => {
 };
 
 export const deleteExpense = (data) => {
+  console.log(data, "Action");
   return {
     type: DELETE_EXPENSE,
     data,
