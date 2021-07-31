@@ -27,6 +27,7 @@ export const expenseReducer = (state = initialState, action) => {
       return {
         ...state,
         expenseList: [...state.expenseList, action.data],
+        query: "",
       };
     }
     case DELETE_EXPENSE: {

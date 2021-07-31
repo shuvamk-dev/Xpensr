@@ -11,6 +11,8 @@ const SuccessModal = ({ modalOpen, setModalOpen }) => {
       bottom: "auto",
       marginRight: "-50%",
       transform: "translate(-50%, -50%)",
+      backgroundColor: "#71ccca",
+      borderRadius: "12px",
     },
   };
   return (

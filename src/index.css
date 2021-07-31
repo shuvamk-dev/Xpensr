@@ -3,10 +3,16 @@ body {
   font-family: "Noto Sans", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #71ccca;
+  color: #001f3f;
 }
 a {
   text-decoration: none;
-  color: black;
+  color: #001f3f;
+}
+.button {
+  background: #71ccca;
+  box-shadow: 20px 20px 60px #60adac, -20px -20px 60px #82ebe8;
 }
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
