@@ -8,7 +8,7 @@ const ExpenseList = () => {
   const notifySuccess = () => toast.success("Expense Deleted!");
   return (
     <div className="expense-list">
-      <div>This is total expenses</div>
+      <div className="total-box"></div>
       <ToastContainer
         position="bottom-left"
         autoClose={1500}
@@ -16,9 +16,18 @@ const ExpenseList = () => {
         newestOnTop={false}
         closeOnClick
       />
-      {list.map((item) => (
-        <Card item={item} notifySuccess={notifySuccess} />
-      ))}
+      {list.length ? (
+        list.map((item) => <Card item={item} notifySuccess={notifySuccess} />)
+      ) : (
+        <div className="empty-state">
+          <img
+            src={require("../../assets/images/empty.png").default}
+            alt="No Expenses"
+            className="empty-image"
+          />
+          <label>Uh Oh! Your expense list is empty.</label>
+        </div>
+      )}
     </div>
   );
 };
