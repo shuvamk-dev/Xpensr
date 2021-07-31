@@ -1,14 +1,20 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { toast, ToastContainer } from "react-toastify";
 import Card from "./card";
 import "./expense-list.css";
 const ExpenseList = () => {
-  const { expenseList: list } = useSelector((state) => state.expenses);
+  const { expenseList: list, query } = useSelector((state) => state.expenses);
+  const [listToShow, setListToShow] = useState([]);
+  const filteredList = list.filter((item) => item.title.includes(query));
+
+  // useEffect(() => {
+  //   const filteredList = list.filter((item) => item.title.includes(query));
+  //   setListToShow(filteredList);
+  // }, [list, query]);
   const notifySuccess = () => toast.success("Expense Deleted!");
   return (
     <div className="expense-list">
-      <div className="total-box"></div>
       <ToastContainer
         position="bottom-left"
         autoClose={1500}
@@ -16,8 +22,10 @@ const ExpenseList = () => {
         newestOnTop={false}
         closeOnClick
       />
-      {list.length ? (
-        list.map((item) => <Card item={item} notifySuccess={notifySuccess} />)
+      {filteredList.length ? (
+        filteredList.map((item) => (
+          <Card item={item} notifySuccess={notifySuccess} />
+        ))
       ) : (
         <div className="empty-state">
           <img

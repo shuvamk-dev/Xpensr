@@ -1,14 +1,26 @@
 import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import "./top-fold.css";
+import { useDispatch } from "react-redux";
+import { searchExpense } from "../../redux/actions/expenses";
 const TopFold = () => {
+  const [query, setQuery] = useState("");
+  const dispatch = useDispatch();
+  const handleQuery = (e) => {
+    setQuery(e.target.value);
+    dispatch(searchExpense(e.target.value));
+  };
   return (
     <div className="topfold">
       {window.location.pathname === "/" ? (
         <div className="home-topfold">
           <div className="searchbar">
             <i class="fi-rr-search"></i>
-            <input placeholder="Search for expenses" />
+            <input
+              placeholder="Search for expenses"
+              value={query}
+              onChange={(e) => handleQuery(e)}
+            />
           </div>
           <Link to="/add-expense">
             <div className="add-button">
