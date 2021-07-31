@@ -3,12 +3,15 @@ import "./card.css";
 import moment from "moment";
 import { useDispatch } from "react-redux";
 import { deleteExpense } from "../../redux/actions/expenses";
-const Card = ({ item }) => {
+
+const Card = ({ item, notifySuccess }) => {
   const time = moment(item.createdAt).fromNow();
   const dispatch = useDispatch();
   const handleDelete = () => {
+    notifySuccess();
     dispatch(deleteExpense(item));
   };
+
   return (
     <div
       className="card"
