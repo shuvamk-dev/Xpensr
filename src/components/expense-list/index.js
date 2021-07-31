@@ -5,13 +5,8 @@ import Card from "./card";
 import "./expense-list.css";
 const ExpenseList = () => {
   const { expenseList: list, query } = useSelector((state) => state.expenses);
-  const [listToShow, setListToShow] = useState([]);
   const filteredList = list.filter((item) => item.title.includes(query));
 
-  // useEffect(() => {
-  //   const filteredList = list.filter((item) => item.title.includes(query));
-  //   setListToShow(filteredList);
-  // }, [list, query]);
   const notifySuccess = () => toast.success("Expense Deleted!");
   return (
     <div className="expense-list">
