@@ -55,6 +55,7 @@
   width: 100%;
   flex-direction: column;
   background: #ffffff;
+  border-radius: 6px;
 }
 
 .category-item {
@@ -63,6 +64,7 @@
   justify-content: space-between;
   padding: 8px 0px;
   cursor: pointer;
+  margin-left: 6px;
 }
 .category-item img {
   height: 32px;
